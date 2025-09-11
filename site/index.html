@@ -1,57 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-  <meta charset="UTF-8">
-  <title>Fonte Nexus</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Miggo — Cartão Gamer</title>
   <style>
+    :root {
+      --bg: linear-gradient(135deg, #004d00, #009933); /* Fundo verde */
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.12);
+      --text: #fff;
+      --muted: #ccc;
+      --radius: 20px;
+    }
     body {
-      background-color: #121212;
-      color: #f0f0f0;
-      font-family: 'Courier New', Courier, monospace;
-      text-align: center;
-      padding: 50px 20px;
       margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
-
-    h1 {
-      font-size: 36px;
-      margin-bottom: 40px;
-      color: #00ffff;
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: 0 0 25px rgba(0, 255, 85, 0.3);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: min(90%, 700px);
     }
-
-    .link {
+    .banner img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
       display: block;
-      margin: 15px 0;
-      font-size: 20px;
-      color: #00ffff;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      align-items: center;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 0 15px rgba(0, 255, 85, 0.5);
+      background: #000;
+      margin-bottom: 16px;
+    }
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .content {
+      text-align: center;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+    }
+    .tags {
+      margin-bottom: 20px;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(0, 255, 85, 0.2);
+      border: 1px solid rgba(0, 255, 85, 0.4);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin: 4px;
+    }
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px; /* Espaçamento extra abaixo da frase */
+    }
+    .btn {
       text-decoration: none;
-      transition: color 0.2s;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-youtube { background: #ff0000; }
+    .btn-discord { background: #5865f2; }
+    .btn-roblox { background: #00b06f; }
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
-    .link:hover {
-      color: #ffffff;
-    }
-
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #666;
+    /* Layout lado a lado no PC */
+    @media (min-width: 768px) {
+      .main {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .avatar {
+        margin-right: 20px;
+        margin-bottom: 0;
+      }
+      .content {
+        flex: 1;
+        text-align: center; /* Mantém centralizado mesmo no PC */
+      }
+      .links {
+        justify-content: center; /* Botões sempre centrados */
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-  <h1>Fonte Nexus</h1>
-
-  <a class="link" href="fontes/nexus.ttf" download>📥 Descarregar Fonte (.ttf)</a>
-  <a class="link" href="apresentacao.html" target="_blank">📄 Apresentação do Projeto</a>
-  <a class="link" href="documentos/manual.pdf" target="_blank">📘 Manual de Utilização</a>
-  <a class="link" href="https://github.com/teu-utilizador/FonteNexus" target="_blank">🌐 Repositório GitHub</a>
-
-  <footer>
-    &copy; 2025 Carlos Guilherme – Fonte Nexus
-  </footer>
-
+  <div class="card">
+    <div class="banner">
+      <img src="1757099171881.png" alt="Banner do Miggo">
+    </div>
+    <div class="main">
+      <div class="avatar">
+        <img src="IMG_20250831_122305.png" alt="Foto do Miggo">
+      </div>
+      <div class="content">
+        <h1>Miggo</h1>
+        <div class="tags">
+          <span class="tag">🎬 Editor de vídeo</span>
+          <span class="tag">📹 YouTube</span>
+          <span class="tag">🛡️ Profissional em Administração de Servidores no Discord.</span>
+        </div>
+        <div class="links">
+          <a href="https://youtube.com/@smk_350?si=DCDjEDb7IrzWmL7D" target="_blank" class="btn btn-youtube"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://discord.gg/uySrCmVBkA" target="_blank" class="btn btn-discord"><i class="fab fa-discord"></i> Discord</a>
+          <a href="https://www.roblox.com/share/g/33346907" target="_blank" class="btn btn-roblox"><i class="fas fa-cube"></i> Roblox</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
